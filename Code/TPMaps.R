@@ -22,9 +22,7 @@ load(url("https://github.com/limnoliver/CSI-Nutrient-Time-Series/blob/72c8269902
 
 #read data and calc regional and lake median/cv of TP
 
-setwd("~/Dropbox/CSI&CL/CSI_LIMNO_Manuscripts-presentations/CSI_var-components/VarComp_data")
-
-data<-read.csv("TP_dat.csv", header=T)
+data<-read.csv("Data/TP_dat.csv", header=T)
 
 #only need hu4 identifier, lagoslakeid, date, response variable from this
 
@@ -153,10 +151,9 @@ get.col.bins.cv <- function(slopes, alpha=255) {
   return(ii)
 }
 
-setwd("~/Documents/LocalGitProjects/VarCompFigures")
 
 
-png("TP_meanlegend.png", width=1.5, height=.5, units='in', res=300)
+png("Maps/Old/TP_meanlegend.png", width=1.5, height=.5, units='in', res=300)
 par(mar = c(0,0,0,0))
 plot.new()
 points(x = seq(from = 0.1, to = 0.9, by = (.8/6)), y= rep(.5,7), pch = 22, cex = 2.75, bg = colors, col="grey30")
@@ -165,7 +162,7 @@ text(x = seq(from = .1, to = .9, by = (.8/6)), y = rep(.2,7), labels=c("10", "20
 text(x=.5, y = .85, labels = "Median TP", cex = .5)
 dev.off()
 
-png("TP_cvlegend.png", width=1.5, height=.5, units = 'in', res=300)
+png("Maps/Old/TP_cvlegend.png", width=1.5, height=.5, units = 'in', res=300)
 par(mar = c(0,0,0,0))
 plot.new()
 points(x = seq(from = 0.1, to = 0.9, by = (.8/6)), y= rep(.5,7), pch = 22, cex = 2.75, bg = colors, col="grey30")
@@ -189,7 +186,7 @@ dev.off()
 # text(x=.5, y = .85, labels = "Regional CV TP", cex = .5)
 # dev.off()
 
-pdf("TP_maps.pdf",width = 8,height = 5)
+pdf("Maps/Old/TP_maps.pdf",width = 8,height = 5)
 par(mfcol=c(2,2), cex = 1)
 par(mar = c(0,0,0,0))
 
